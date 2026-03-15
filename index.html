@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>📚 경제 용어 단어장</title>
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: #fff; color: #1a1a1a; padding: 24px; }
+.wrap { max-width: 900px; margin: 0 auto; padding: 1rem 0; }
+.top-bar { display: flex; align-items: center; justify-content: space-between; margin-bottom: 1.25rem; flex-wrap: wrap; gap: 8px; }
+.title-area { display: flex; align-items: center; gap: 10px; }
+.page-icon { font-size: 20px; }
+.page-title { font-size: 18px; font-weight: 500; color: #1a1a1a; }
+.view-tabs { display: flex; gap: 4px; }
+.vtab { font-size: 12px; padding: 4px 10px; border-radius: 8px; border: 0.5px solid #ccc; background: transparent; color: #666; cursor: pointer; }
+.vtab.active { background: #f0f0f0; color: #1a1a1a; font-weight: 500; }
+.filter-bar { display: flex; gap: 8px; margin-bottom: 1rem; flex-wrap: wrap; align-items: center; }
+.filter-label { font-size: 12px; color: #666; }
+.chip { font-size: 11px; padding: 3px 10px; border-radius: 100px; border: 0.5px solid #ccc; background: transparent; color: #666; cursor: pointer; }
+.chip.on { background: #f0f0f0; color: #1a1a1a; border-color: #999; }
+.add-btn { margin-left: auto; font-size: 12px; padding: 4px 12px; border-radius: 8px; border: 0.5px solid #ccc; background: transparent; color: #666; cursor: pointer; }
+.db-table { width: 100%; border-collapse: collapse; font-size: 13px; }
+.db-table th { text-align: left; padding: 6px 10px; font-size: 11px; font-weight: 500; color: #666; border-bottom: 0.5px solid #e0e0e0; background: #f7f7f7; }
+.db-table td { padding: 8px 10px; border-bottom: 0.5px solid #e0e0e0; vertical-align: middle; color: #1a1a1a; }
+.db-table tr:hover td { background: #f7f7f7; }
+.term-name { font-weight: 500; color: #1a1a1a; cursor: pointer; }
+.term-name:hover { text-decoration: underline; }
+.badge { display: inline-block; font-size: 10px; padding: 2px 7px; border-radius: 100px; margin: 1px 2px; }
+.badge.macro { background: #E6F1FB; color: #0C447C; }
+.badge.rate { background: #EEEDFE; color: #3C3489; }
+.badge.stock { background: #EAF3DE; color: #27500A; }
+.badge.semi { background: #FAEEDA; color: #633806; }
+.badge.ai { background: #E1F5EE; color: #085041; }
+.badge.trade { background: #FAECE7; color: #712B13; }
+.date-tag { font-size: 11px; color: #aaa; }
+.rel-tag { font-size: 11px; color: #185FA5; text-decoration: underline; cursor: pointer; }
+.check { display: inline-block; width: 14px; height: 14px; border-radius: 3px; border: 1.5px solid #ccc; vertical-align: middle; cursor: pointer; }
+.check.done { background: #1D9E75; border-color: #1D9E75; position: relative; }
+.check.done::after { content: ''; position: absolute; left: 3px; top: 1px; width: 5px; height: 8px; border: 1.5px solid #fff; border-left: none; border-top: none; transform: rotate(45deg); }
+.container { position: relative; }
+.detail-overlay { position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0,0,0,0.15); border-radius: 12px; display: flex; align-items: flex-start; justify-content: center; padding-top: 20px; z-index: 10; }
+.detail-card { background: #fff; border: 0.5px solid #ccc; border-radius: 12px; padding: 1.25rem; width: 90%; max-width: 480px; }
+.detail-header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 1rem; }
+.detail-title { font-size: 18px; font-weight: 500; color: #1a1a1a; }
+.close-btn { font-size: 16px; color: #666; cursor: pointer; background: none; border: none; line-height: 1; padding: 2px 6px; }
+.section-label { font-size: 11px; font-weight: 500; color: #666; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 4px; margin-top: 12px; }
+.section-body { font-size: 13px; color: #1a1a1a; line-height: 1.6; }
+.analogy-box { background: #f7f7f7; border-radius: 0 8px 8px 0; padding: 10px 12px; font-size: 13px; color: #555; line-height: 1.6; margin-top: 4px; border-left: 3px solid #7F77DD; }
+.prop-row { display: flex; align-items: center; gap: 8px; font-size: 12px; margin: 5px 0; }
+.prop-key { color: #666; width: 90px; flex-shrink: 0; }
+.board { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 10px; }
+.board-col-title { font-size: 11px; font-weight: 500; color: #666; text-transform: uppercase; letter-spacing: 0.04em; margin-bottom: 8px; }
+.board-card { background: #fff; border: 0.5px solid #e0e0e0; border-radius: 8px; padding: 8px 10px; margin-bottom: 6px; font-size: 12px; color: #1a1a1a; cursor: pointer; }
+.board-card:hover { border-color: #ccc; }
+.board-card .bc-sub { font-size: 11px; color: #888; margin-top: 3px; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="top-bar">
+    <div class="title-area">
+      <span class="page-icon">📚</span>
+      <span class="page-title">경제 용어 단어장</span>
+    </div>
+    <div class="view-tabs">
+      <button class="vtab active" onclick="setView('table')">테이블</button>
+      <button class="vtab" onclick="setView('board')">보드</button>
+    </div>
+  </div>
+
+  <div class="filter-bar">
+    <span class="filter-label">카테고리:</span>
+    <button class="chip on" onclick="filterCat('all',this)">전체</button>
+    <button class="chip" onclick="filterCat('거시경제',this)">거시경제</button>
+    <button class="chip" onclick="filterCat('금리',this)">금리</button>
+    <button class="chip" onclick="filterCat('증시',this)">증시</button>
+    <button class="chip" onclick="filterCat('반도체',this)">반도체</button>
+    <button class="chip" onclick="filterCat('AI',this)">AI</button>
+    <button class="chip" onclick="filterCat('무역',this)">무역</button>
+    <button class="chip" onclick="filterCat('미복습',this)">미복습만</button>
+  </div>
+
+  <div class="container" id="main-container">
+    <div id="view-table">
+      <table class="db-table">
+        <thead>
+          <tr>
+            <th style="width:130px">용어명</th>
+            <th>한 줄 정의</th>
+            <th style="width:90px">카테고리</th>
+            <th style="width:60px">난이도</th>
+            <th style="width:80px">관련 용어</th>
+            <th style="width:50px">복습</th>
+          </tr>
+        </thead>
+        <tbody id="table-body"></tbody>
+      </table>
+    </div>
+
+    <div id="view-board" style="display:none">
+      <div class="board" id="board-body"></div>
+    </div>
+
+    <div class="detail-overlay" id="detail-overlay" style="display:none">
+      <div class="detail-card">
+        <div class="detail-header">
+          <div class="detail-title" id="d-title"></div>
+          <button class="close-btn" onclick="closeDetail()">✕</button>
+        </div>
+        <div class="prop-row"><span class="prop-key">카테고리</span><span id="d-cat"></span></div>
+        <div class="prop-row"><span class="prop-key">난이도</span><span id="d-diff"></span></div>
+        <div class="prop-row"><span class="prop-key">관련 용어</span><span style="font-size:11px;color:#185FA5;text-decoration:underline" id="d-rel"></span></div>
+        <div class="section-label" style="margin-top:14px">핵심 정의</div>
+        <div class="section-body" id="d-def"></div>
+        <div class="section-label">쉬운 비유</div>
+        <div class="analogy-box" id="d-ana"></div>
+        <div class="section-label">등장한 브리핑</div>
+        <div class="section-body" id="d-brief"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+const terms = [
+  { id:1, name:"FOMC", full:"연방공개시장위원회", cat:"금리", diff:"⭐⭐", rel:"기준금리, 테이퍼링", done:true,
+    def:"미국 연방준비제도(Fed)가 기준금리를 결정하는 회의체. 연 8회 정기 개최.",
+    ana:"정부가 '돈 빌리는 비용'을 얼마로 할지 투표로 결정하는 위원회.",
+    brief:"2025-03-10 브리핑 — 3월 FOMC 동결 결정" },
+  { id:2, name:"HBM", full:"고대역폭 메모리", cat:"반도체", diff:"⭐⭐⭐", rel:"D램, GPU", done:false,
+    def:"AI 연산에 특화된 고대역폭 메모리 반도체. 여러 D램을 수직으로 쌓아 대용량 데이터를 빠르게 처리.",
+    ana:"일반 메모리가 단선 도로라면, HBM은 수십 차선 고속도로처럼 데이터를 한꺼번에 처리.",
+    brief:"2025-03-11 브리핑 — SK하이닉스 HBM4 양산 일정" },
+  { id:3, name:"테이퍼링", full:"Tapering", cat:"금리", diff:"⭐⭐", rel:"FOMC, 양적완화", done:false,
+    def:"중앙은행이 채권 매입 규모를 점진적으로 줄여 시장에 푸는 유동성을 축소하는 정책.",
+    ana:"물놀이장 수도꼭지를 서서히 잠그는 것처럼, 시장에 공급하던 돈을 천천히 줄이는 것.",
+    brief:"2025-03-12 브리핑 — Fed 대차대조표 축소 논의" },
+  { id:4, name:"PCE", full:"개인소비지출 물가지수", cat:"거시경제", diff:"⭐⭐", rel:"CPI, 인플레이션", done:true,
+    def:"미국 Fed가 인플레이션 측정에 가장 선호하는 지표. 가구의 실제 소비 변화를 반영.",
+    ana:"소비자가 실제로 무엇을 사고 얼마 썼는지 추적해, 물가 흐름을 더 정밀하게 잡아내는 자.",
+    brief:"2025-03-13 브리핑 — 2월 PCE 2.5% 예상치 부합" },
+  { id:5, name:"GPT-5", full:"GPT-5", cat:"AI", diff:"⭐", rel:"LLM, 오픈AI", done:false,
+    def:"오픈AI가 개발 중인 차세대 대규모 언어 모델(LLM). 추론·멀티모달 성능 향상 기대.",
+    ana:"스마트폰 신모델 출시처럼, AI 언어 엔진의 성능이 한 단계 업그레이드되는 것.",
+    brief:"2025-03-14 브리핑 — 오픈AI GPT-5 출시 예정" },
+  { id:6, name:"관세 전쟁", full:"Tariff War", cat:"무역", diff:"⭐⭐", rel:"보호무역, 환율", done:false,
+    def:"두 나라 이상이 서로의 수입품에 보복 관세를 부과하는 무역 갈등 상황.",
+    ana:"이웃집이 내 물건에 입장료를 올리면, 나도 그 집 물건에 입장료를 올리는 싸움.",
+    brief:"2025-03-14 브리핑 — 미·중 상호관세 25% 발효" },
+];
+
+let currentCat = 'all', currentView = 'table', currentTerm = null;
+
+function catClass(cat) {
+  return {거시경제:'macro',금리:'rate',증시:'stock',반도체:'semi',AI:'ai',무역:'trade'}[cat]||'macro';
+}
+
+function renderTable(data) {
+  document.getElementById('table-body').innerHTML = data.map(t => `
+    <tr>
+      <td><span class="term-name" onclick="openDetail(${t.id})">${t.name}</span><br><span style="font-size:11px;color:#aaa">${t.full}</span></td>
+      <td style="font-size:12px;color:#666;max-width:220px">${t.def.slice(0,42)}…</td>
+      <td><span class="badge ${catClass(t.cat)}">${t.cat}</span></td>
+      <td style="font-size:12px">${t.diff}</td>
+      <td><span class="rel-tag">${t.rel.split(',')[0].trim()}</span></td>
+      <td><span class="check ${t.done?'done':''}" onclick="toggleDone(${t.id},this)"></span></td>
+    </tr>
+  `).join('');
+}
+
+function renderBoard(data) {
+  const cats = ['거시경제','금리','증시','반도체','AI','무역'];
+  document.getElementById('board-body').innerHTML = cats.map(cat => {
+    const items = data.filter(t => t.cat === cat);
+    if (!items.length) return '';
+    return `<div>
+      <div class="board-col-title">${cat} (${items.length})</div>
+      ${items.map(t=>`<div class="board-card" onclick="openDetail(${t.id})">
+        <div>${t.name}</div>
+        <div class="bc-sub">${t.diff} · ${t.done?'✓ 복습완료':'미복습'}</div>
+      </div>`).join('')}
+    </div>`;
+  }).join('');
+}
+
+function getFiltered() {
+  let d = [...terms];
+  if (currentCat === '미복습') d = d.filter(t => !t.done);
+  else if (currentCat !== 'all') d = d.filter(t => t.cat === currentCat);
+  return d;
+}
+
+function render() {
+  const d = getFiltered();
+  if (currentView === 'table') renderTable(d);
+  else renderBoard(d);
+}
+
+function setView(v) {
+  currentView = v;
+  document.getElementById('view-table').style.display = v==='table'?'block':'none';
+  document.getElementById('view-board').style.display = v==='board'?'block':'none';
+  document.querySelectorAll('.vtab').forEach((el,i)=>el.classList.toggle('active',(i===0&&v==='table')||(i===1&&v==='board')));
+  render();
+}
+
+function filterCat(cat, el) {
+  currentCat = cat;
+  document.querySelectorAll('.chip').forEach(c=>c.classList.remove('on'));
+  el.classList.add('on');
+  render();
+}
+
+function toggleDone(id, el) {
+  const t = terms.find(t=>t.id===id);
+  t.done = !t.done;
+  el.classList.toggle('done');
+}
+
+function openDetail(id) {
+  const t = terms.find(t=>t.id===id);
+  currentTerm = t;
+  document.getElementById('d-title').textContent = `${t.name} (${t.full})`;
+  document.getElementById('d-cat').innerHTML = `<span class="badge ${catClass(t.cat)}" style="font-size:11px">${t.cat}</span>`;
+  document.getElementById('d-diff').textContent = t.diff;
+  document.getElementById('d-rel').textContent = t.rel;
+  document.getElementById('d-def').textContent = t.def;
+  document.getElementById('d-ana').textContent = t.ana;
+  document.getElementById('d-brief').textContent = t.brief;
+  document.getElementById('detail-overlay').style.display = 'flex';
+  document.getElementById('main-container').style.minHeight = '420px';
+}
+
+function closeDetail() {
+  document.getElementById('detail-overlay').style.display = 'none';
+  document.getElementById('main-container').style.minHeight = '';
+}
+
+render();
+</script>
+</body>
+</html>
